@@ -1,0 +1,57 @@
+#plaque{
+  width: 85%;
+  height: 70%;
+  padding-left: 10%;
+}
+
+#tpsRestant{
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+
+}
+
+#tpsTotal{
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+
+}
+
+#dateArrivee{
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+
+
+}
+
+#depart{
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+
+
+}
+#infoBox{
+  border: 1px solid #a1a1a1;
+    padding: 10px 40px;
+    background: #FFFFFF	;
+    border-radius: 5px;
+}
+
+#leftColumn{
+  margin-bottom: 4%;
+}
+
+#rightColumn{
+  margin-bottom: 4%;
+}
+
+#renouveleCredit{
+  margin-left: 15%;
+}
+#validerBouton{
+  margin-left: 33%;
+  margin-top: 3%;
+}

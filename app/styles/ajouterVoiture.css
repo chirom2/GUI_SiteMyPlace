@@ -1,0 +1,48 @@
+#logoRow{
+  margin-bottom: 2%;
+}
+
+#logoCenter{
+  height: 100px;
+  width: 100px;
+}
+
+
+#logoCar{
+
+  height: 80px;
+  width: 80px;
+}
+
+
+.payementBox{
+  border: 1px solid #a1a1a1;
+    padding: 10px 40px;
+    background: #dddddd;
+    border-radius: 5px;
+}
+
+.logoPay{
+  height: 45px;
+  width: 60px;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
