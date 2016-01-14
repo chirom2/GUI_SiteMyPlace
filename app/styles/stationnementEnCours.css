@@ -1,7 +1,15 @@
+#infoProprietaire{
+  text-align: center;
+}
+
 #plaque{
-  width: 85%;
-  height: 70%;
+  width: 150px;
+  height: 100px;
   padding-left: 10%;
+}
+
+#nomProprio{
+  font-size: 1.5em;
 }
 
 #tpsRestant{
@@ -13,14 +21,14 @@
 
 #tpsTotal{
   text-align: center;
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bold;
 
 }
 
 #dateArrivee{
   text-align: center;
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bold;
 
 
@@ -54,4 +62,11 @@
 #validerBouton{
   margin-left: 33%;
   margin-top: 3%;
+}
+
+
+#instructions{
+  color: #337ab7;
+  font-size: 1em;
+  text-align: left;
 }

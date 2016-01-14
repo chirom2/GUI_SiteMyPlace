@@ -16,11 +16,12 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- <link rel="stylesheet" href="styles/main.css"> -->
   <!-- endbuild -->
   <!-- Custom styles for this template -->
   <link href="styles/carousel.css" rel="stylesheet">
   <link href="styles/index.css" rel="stylesheet">
+  <link href="styles/cover.css" rel="stylesheet">
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -36,21 +37,50 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-
   <div class="container">
     <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="ajouterVoiture.html">Connexion</a></li>
-      </ul>
-      <h3 class="text-muted">InterfaceSite</h3>
+      <div class="nav nav-pills pull-right">
+        <a id="connection" href="login.html" class="btn btn-primary" role="button">Connexion</a>
+      </div>
+      <div>
+        <img id="logoMyplace" src="images/logoMyplace.png">
+      </div>
     </div>
-
+    <hr>
     <!-- 1ERE ligne -->
     <div class="row">
 
       <h1>Payez en ligne, stationnez plus facile.</h1>
+
+      <div class="row jumbotron">
+        <div class="col-md-6 col-lg-6 inscriptionLabel">
+
+
+
+            <fieldset>
+              <h3>Inscription</h3>
+              <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="Nom" >
+              </div>
+              <div class="form-group">
+                <label class="inscriptionLabel" for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" placeholder="Prénom">
+              </div>
+              <div class="form-group">
+                <label class="inscriptionLabel" for="mail">Mail</label>
+                <input type="mail" class="form-control" id="mail" placeholder="Mail">
+              </div>
+            </fieldset>
+            <button onclick="window.location.href='confirm.html'" class="btn btn-default">Inscription</button>
+
+        </div>
+
+        <div id="explain" class="col-md-6 col-lg-6">
+          MyPlace vous permet de payer en ligne votre place de parking ou que vous soyez. Si vous n'avez pas de compte, commencez par en créer un.
+        </div>
+      </div>
+
 
       <!-- Carousel
 ================================================== -->
@@ -63,33 +93,26 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+            <img class="first-slide" src="images/parking.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Example headline.</h1>
-                <p>Note: If you're viewing this page via a
-                  <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+
               </div>
             </div>
           </div>
           <div class="item">
-            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+            <img class="second-slide" src="images/parcmetre.jpg" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-              </div>
+
             </div>
           </div>
+        </div>
           <div class="item">
-            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+            <img class="third-slide" src="images/horodateur.jpg" alt="Third slide">
             <div class="container">
               <div class="carousel-caption">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+
               </div>
             </div>
           </div>
@@ -103,44 +126,12 @@
           <span class="sr-only">Next</span>
         </a>
 
-      </div <!-- /.carousel -->
+      </div> <!-- /.carousel -->
     </div>
     <!-- fin 1ERE row -->
 
-
-    <div class="row jumbotron">
-      <div class="col-md-6 col-lg-6 inscriptionLabel">
-        <form>
-          <fieldset>
-            <h3>Inscription</h3>
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" class="form-control" id="nom" placeholder="Nom" required>
-            </div>
-            <div class="form-group">
-              <label class="inscriptionLabel" for="prenom">Prénom</label>
-              <input type="text" class="form-control" id="prenom" placeholder="Prénom" required>
-            </div>
-            <div class="form-group">
-              <label class="inscriptionLabel" for="mail">Mail</label>
-              <input type="mail" class="form-control" id="mail" placeholder="Mail" required>
-            </div>
-          </fieldset>
-          <button class="btn btn-default">Inscription</button>
-        </form>
-      </div>
-
-      <div class="col-md-6 col-lg-6">
-        My place vous permet de payer en ligne votre place de parking ou que vous soyez. Si vous n'en avez pas déjà un, commencez par créer un compte.
-      </div>
-    </div>
-
-
-
-
-    <div class="footer">
-
-    </div>
+  </div>
+  <div class="footer">
 
   </div>
 

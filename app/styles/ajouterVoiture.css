@@ -46,3 +46,12 @@
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
+
+  #boutonGroup{
+    margin-left: 33%;
+    margin-top: 3%;
+  }
+
+#instruction{
+  font-size: 1.5em; 
+}

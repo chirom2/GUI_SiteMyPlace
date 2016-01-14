@@ -23,6 +23,8 @@
   <link href="styles/index.css" rel="stylesheet">
   <link href="styles/ajouterVoiture.css" rel="stylesheet">
   <link href="styles/stationnementEnCours.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -43,13 +45,14 @@
   <div class="container">
 
     <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-      <h3 class="text-muted">InterfaceSite</h3>
-    </div><hr>
+      <div class="nav nav-pills pull-right">
+        <a id="connection" href="index.html" class="btn btn-secondary" role="button">Déconnexion</a>
+      </div>
+      <div>
+        <img id="logoMyplace" src="images/logoMyplace.png">
+      </div>
+    </div>
+    <hr>
 
     <!-- logo -->
     <div id="logoRow" class="row">
@@ -80,83 +83,87 @@
     <div class="row">
       <div id="row2left" class="col-md-4 col-lg-3">
         <div class="payementBox">
-          <label> Crédit actuel: 3.25€</label>
+          <label> Crédit actuel: 10€</label>
           <br/>
           <br/>
           <span>
-            <button>Ajouter du crédit</button>
+            <button class="btn btn-default">Ajouter du crédit</button>
           </span>
+          <br>
           <br>
           <span>
             <button>
               <img class="logoPay" src="images/visa.png">
             </button>
           </span>
-          <br/>
+          <br><br>
           <span>
             <button>
               <img class="logoPay" src="images/MasterCard.png">
             </button>
           </span>
-          <br/>
+          <br/><br>
           <span>
             <button>
               <img class="logoPay" src="images/paypal.png">
             </button>
           </span>
         </div>
-        <br/>
-        <div class="payementBox">
-          <label>Paramètres du compte:</label>
-          <label>Nom : </label>
-          <span>Martin</span>
-          <label>Prénom : </label>
-          <span>Pierre</span>
-          <label>Email : </label>
-          <span>pierre.martin@mail.fr</span>
-        </div>
+        <br/><br>
+
       </div>
 
 
       <!-- centre -->
       <div id="row2center" class="col-md-4 col-lg-6">
         <div class="payementBox">
-          <label>Pierre Martin</label>
 
-          <div>
-            <img id="plaque" src="images/plaqueImmatriculation.gif">
+
+          <div id="infoProprietaire">
+            <label id="nomProprio">Pierre Martin</label><br>
+            <img style="width: 180px; height=130px;" src="images/plaqueImmatriculation.gif">
           </div>
           <br>
-          <label>Temps restant :</label>
-          <div id="tpsRestant">1h30</div>
+          <div id="depart">Vous devez partir à 12 h 04.</div>
           <br>
-          <label>Total de temps crédité :</label>
-          <div id="tpsTotal">2h</div>
-          <br>
-          <label>Heure et date d'arrivée :
-          </label><div id="dateArrivee"> 8/01/2016 à 10h04 </div><br>
 
-          <div id="depart">Vous devez partir à 12 h 04</div><br>
+          <div id="tpsRestant">Il vous reste 1h30 de stationnement.</div>
+          <br>
+
+          <div id="tpsTotal">Total de temps crédité : 2h</div>
+          <br>
+
+          <div id="dateArrivee">Heure et date d'arrivée : 8/01/2016 à 10h04 </div>
+          <br>
+
+
           <div id="infoBox" class="row">
             <div class="row">
               <label>Tarifs</label>
             </div>
             <div style="text-align:center;" id="leftColumn" class="col-md-6 col-lg-6">
-              <label>15 min = 0.3€</label><br>
-              <label>30 min = 0.6€</label><br>
-              <label>1h = 1.30€</label><br>
+              <label>15 min = 0.3€</label>
+              <br>
+              <label>30 min = 0.6€</label>
+              <br>
+              <label>1h = 1.30€</label>
+              <br>
               <label>1h30 = 1.8€</label>
             </div>
-            <div style="text-align:center;" id="rightColumn" class="col-md-4 col-lg-6">
-              <label>2h30 = 2.90€</label><br>
-              <label>3h = 3.80€</label><br>
-              <label>3h30 = 4.30€</label><br>
+            <div style="text-align:center;" id="rightColumn" class="col-md-6 col-lg-6">
+              <label>2h30 = 2.90€</label>
+              <br>
+              <label>3h = 3.80€</label>
+              <br>
+              <label>3h30 = 4.30€</label>
+              <br>
               <label>4h = 5.30€</label>
             </div>
             <div style="text-align:center;" class="row">
               <label>Stationnement limité à 4h !</label>
             </div>
-          </div><br>
+          </div>
+          <br>
           <div class="form-group">
             <label for="sel1">Temps à ajouter:</label>
             <select class="form-control" name="">
@@ -172,9 +179,15 @@
           </div>
           <label id="renouveleCredit" class="checkbox-inline">
             <input type="checkbox" value="" title="Ajoute automatiquement pour vous le crédit dans la limite des 4h.">Renouveler automatiquement le crédit</label>
-              <button id="validerBouton" type="button" class="btn btn-primary"> Valider le payement</button>
+          <p id="boutonGroup">
+            <button id="" type="button" class="btn btn-primary"> Valider</button>
+            <button id="quitter" type="button" class="btn btn-danger"> Quitter le stationnement</button>
+          </p>
 
-              <button type="button" class="btn btn-primary"> Quitter le stationnement</button>
+          <div id="dialog-confirm" title="Quitter l'emplacement?" style="display:none">
+            <p>
+              <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Souhaitez-vous quitter la place de parking?</p>
+          </div>
 
         </div>
       </div>
@@ -189,8 +202,16 @@
             <a href="#"><i class="glyphicon glyphicon-search"></i></a>
             <input type="text" class="form-control" placeholder="Recherche" />
             <br>
-            <span id="listeVoiture">Votre liste de voiture est vide.</span>
+
           </div>
+          <span id="listeVoiture">Martine Henri
+            <button onclick="window.location.href='voitureMartineHenri.html'" class=" btn btn-default glyphicon glyphicon-plus"></button>
+          </span>
+          <br>
+          <br>
+          <span id="listeVoiture">Bernard Boulard
+            <button onclick="window.location.href='voitureBernardBoulard.html'" class=" btn btn-default glyphicon glyphicon-plus"></button>
+          </span>
         </div>
         <br>
         <br>
@@ -207,9 +228,8 @@
                 <input type="text" class="form-control" id="immatriculation" placeholder="Immatriculation" required>
               </div>
             </fieldset>
-            <button class="btn btn-default">Valider</button>
+            <button class="btn btn-default"><a href="ajoutPaulJacobsVIDE.html">Valider</a></button>
           </form>
-
         </div>
       </div>
     </div>
@@ -223,7 +243,9 @@
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js" ></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <script src="scripts/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>

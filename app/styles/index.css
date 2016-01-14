@@ -2,3 +2,26 @@
 .inscriptionLabel {
   text-align: none !important;
 }
+
+#explain{
+  padding-top: 70px;
+  font-size: 2em;
+}
+
+
+#logoMyplace{
+  width: 100px;;
+  height: 100px;
+}
+
+#connection{
+  margin-top: 60%;
+}
+
+#myCarousel{
+  height: 10%;
+}
+
+#recap{
+  font-size: 1.5em;
+}
